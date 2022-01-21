@@ -1,6 +1,7 @@
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert;
 
 
 public class StudentTest {
@@ -8,15 +9,15 @@ public class StudentTest {
     public void testNewStudent(){
         Student s1 = new Student(1l, "Charles"); // create new obj
         Student charles = null;
-        assertNull(charles); // checking if null is instantiated.
-        assertNotNull(s1); //checking if s1 is not instantiated.
+        Assert.assertNull(charles); // checking if null is instantiated.
+        Assert.assertNotNull(s1); //checking if s1 is not instantiated.
     }
 
     @Test
     public void testAddGrade(){
         Student s1 = new Student(1L, "Charles"); //create new obj
         s1.addGrade(90); // adding the grade
-        assertSame(90, s1.getGrades().get(0)); //With assertNotSame, it's possible to verify if two variables don't refer to the same object. Otherwise, when we want to verify that two variables refer to the same object, we can use the assertSame assertion.
+        Assert.assertSame(90, s1.getGrades().get(0)); //With assertNotSame, it's possible to verify if two variables don't refer to the same object. Otherwise, when we want to verify that two variables refer to the same object, we can use the assertSame assertion.
     }
 
     @Test
