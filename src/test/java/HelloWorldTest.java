@@ -17,4 +17,19 @@ public class HelloWorldTest {
         Assert.assertEquals(this.expected, HelloWorld.hello());
     }
 
+    @Test
+    public void testForHelloJay(){
+        Assert.assertEquals(this.hiJay, HelloWorld.hello("Jay"));
+    }
+
+    @Test
+    public void testForHelloDavid() {
+        Assert.assertEquals("Hello, David!", HelloWorld.hello("David"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testForNull() {
+        Assert.assertNotEquals("Hello, null!", HelloWorld.hello(null));
+    }
+
 }
