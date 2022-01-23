@@ -1,5 +1,5 @@
 public class CodeupCrypt {
-    public static double version = 0.0;
+    public static double version = 0;
 
     public static String hashPassword(String password){
         String hash = "";
@@ -27,11 +27,11 @@ public class CodeupCrypt {
                     break;
             }
         }
-        return "";
+        return hash;
     }
 
     public static boolean checkPassword(String password, String hash) {
-        return true;
+        return hash.equals(hashPassword(password));
     }
 
 
