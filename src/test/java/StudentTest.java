@@ -1,10 +1,15 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 //import static org.junit.Assert;
 
 
 public class StudentTest {
+
+    @Before
+
+
     @Test
     public void testNewStudent(){
         Student s1 = new Student(1l, "Charles"); // create new obj
@@ -29,6 +34,33 @@ public class StudentTest {
         Assert.assertEquals(88.33333333333333, s1.getGradeAverage(), 0);
         
     }
+
+    //David solution
+
+    @Test
+    public void studentProperlyInitialized(){
+       Student billy = new Student(1,"Billy"); //create student class
+       Assert.assertEquals(1, billy.getId());
+       Assert.assertEquals("Billy", billy.getName());
+       Assert.assertTrue(billy.getGrades().isEmpty());
+    }
+
+    @Test
+    public void addGradeTest(){ //
+        Student billy = new Student(1,"Billy");
+        Assert.assertTrue(billy.getGrades().isEmpty()); // its true because there's no added grade yet
+        billy.addGrade(99);
+        Assert.assertFalse(billy.getGrades().isEmpty());
+
+        Assert.assertSame(88, billy.getGrades().isEmpty()); //assertfalse true because we added 99 to the array
+    }
+//
+//    @Test
+//    public void gradeAverageTest(){
+//        Student billy = new Student(1, "Billy");
+//        billy.addGrade(90);
+//        Assert.assertEquals(90, );
+//    }
 
 
 
