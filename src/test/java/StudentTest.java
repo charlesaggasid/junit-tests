@@ -26,6 +26,7 @@ public class StudentTest {
         s1.addGrade(90);
         s1.addGrade(80);
         s1.addGrade(95);
+        Assert.assertEquals(85, s1.getGradeAverage(), 0);
         
     }
 
